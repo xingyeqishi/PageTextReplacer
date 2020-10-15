@@ -19,18 +19,10 @@ export default class TodoTextInput extends Component {
     };
   }
 
-  handleSubmit = (evt) => {
-    const text = evt.target.value.trim();
-    if (evt.which === 13) {
-      this.props.onSave(text);
-      if (this.props.newTodo) {
-        this.setState({ text: '' });
-      }
-    }
-  };
-
   handleChange = (evt) => {
-    this.setState({ text: evt.target.value });
+    const text = evt.target.value;
+    this.setState({ text: text });
+    this.props.onSave(text);
   };
 
   handleBlur = (evt) => {
@@ -52,7 +44,6 @@ export default class TodoTextInput extends Component {
         value={this.state.text}
         onBlur={this.handleBlur}
         onChange={this.handleChange}
-        onKeyDown={this.handleSubmit}
       />
     );
   }

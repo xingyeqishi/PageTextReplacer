@@ -1,4 +1,5 @@
 function saveState(state) {
+  console.log('save state');
   chrome.storage.local.set({ state: JSON.stringify(state) });
 }
 
@@ -16,7 +17,7 @@ export default function () {
     store.subscribe(() => {
       const state = store.getState();
       saveState(state);
-      setBadge(state.todos);
+      // setBadge(state.tasks);
     });
     return store;
   };

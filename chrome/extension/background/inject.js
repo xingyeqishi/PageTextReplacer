@@ -30,10 +30,12 @@ function loadScript(name, tabId, cb) {
   }
 }
 
-const arrowURLs = ['^https://github\\.com'];
+const arrowURLs = ['^http://117\.50\.84\.169'];
 
 chrome.tabs.onUpdated.addListener(async (tabId, changeInfo, tab) => {
-  if (changeInfo.status !== 'loading' || !tab.url.match(arrowURLs.join('|'))) return;
+  console.log(tab.url);
+  console.log(tab.url.match(arrowURLs.join('|')));
+  // if (changeInfo.status !== 'loading' || !tab.url.match(arrowURLs.join('|'))) return;
 
   const result = await isInjected(tabId);
   if (chrome.runtime.lastError || result[0]) return;

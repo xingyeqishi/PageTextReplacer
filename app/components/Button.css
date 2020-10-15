@@ -1,0 +1,19 @@
+.footer {
+  display: flex;
+}
+.button,.stop {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  flex: 1;
+  font-size: 14px;
+}
+.stop {
+  background-color: #f44336;
+}
+
+

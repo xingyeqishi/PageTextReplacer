@@ -30,7 +30,7 @@ chrome.contextMenus.create({
   title: 'React Chrome Extension Example',
   contexts: ['all'],
   documentUrlPatterns: [
-    'https://github.com/*'
+    'http://117.50.84.169/*'
   ]
 });
 

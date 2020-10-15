@@ -8,7 +8,7 @@ import style from './App.css';
 
 @connect(
   state => ({
-    todos: state.todos
+    tasks: state.tasks
   }),
   dispatch => ({
     actions: bindActionCreators(TodoActions, dispatch)
@@ -17,7 +17,7 @@ import style from './App.css';
 export default class App extends Component {
 
   static propTypes = {
-    todos: PropTypes.array.isRequired,
+    tasks: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired
   };
 
@@ -26,8 +26,12 @@ export default class App extends Component {
 
     return (
       <div className={style.normal}>
-        <Header addTodo={actions.addTodo} />
+        <Header addTask={actions.addTask} deleteTask={actions.deleteTask}/>
+      {
+        /*
         <MainSection todos={todos} actions={actions} />
+        */
+      }
       </div>
     );
   }

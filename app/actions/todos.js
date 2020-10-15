@@ -1,11 +1,11 @@
 import * as types from '../constants/ActionTypes';
 
-export function addTodo(text) {
-  return { type: types.ADD_TODO, text };
+export function addTask(data) {
+  return { type: types.ADD_TASK, data };
 }
 
-export function deleteTodo(id) {
-  return { type: types.DELETE_TODO, id };
+export function deleteTask() {
+  return { type: types.DELETE_TASK };
 }
 
 export function editTodo(id, text) {
